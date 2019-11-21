@@ -54,8 +54,8 @@ deploy-prod:
     - docker pull registry.git.rwth-aachen.de/fbuervenich/auto-deploy-test.fbuervenich.de
     - docker stop auto-deploy-test.fbuervenich.de || true
     - docker rm auto-deploy-test.fbuervenich.de || true
-    - docker run -d -e VIRTUAL_HOST=auto-deploy-test.fbuervenich.de -e LETSENCRYPT_HOST=auto-deploy-test.fbuervenich.de -e LETSENCRYPT_EMAIL=florentin@fbuervenich.de --network=production_docker-network --name auto-deploy-test.fbuervenich.de registry.git.rwth-aachen.de/fbuervenich/auto-deploy-test.fbuervenich.de
+    - docker run -d -e VIRTUAL_HOST=auto-deploy-test.fbuervenich.de -e LETSENCRYPT_HOST=auto-deploy-test.fbuervenich.de -e LETSENCRYPT_EMAIL=florentin@fbuervenich.de --network=production_docker-network --name auto-deploy-test.fbuervenich.de registry.git.rwth-aachen.de/fbuervenich.de/auto-deploy-test
   # dependencies:
   #   -build 
   only:
-    - master  
+    - master

@@ -11,7 +11,7 @@ stages:
   # - build
   - deploy
 
-setup:
+# setup:
   # stage: setup
   # script:
   #   - npm ci

@@ -51,7 +51,7 @@ deploy-prod:
   script:
     - curl -sSL https://get.docker.com/ | sh
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker pull registry.git.rwth-aachen.de/fbuervenich/auto-deploy-test
+    - docker pull registry.git.rwth-aachen.de/fbuervenich.de/auto-deploy-test
     - docker stop auto-deploy-test.fbuervenich.de || true
     - docker rm auto-deploy-test.fbuervenich.de || true
     - docker run -d -e VIRTUAL_HOST=auto-deploy-test.fbuervenich.de -e LETSENCRYPT_HOST=auto-deploy-test.fbuervenich.de -e LETSENCRYPT_EMAIL=florentin@fbuervenich.de --network=production_docker-network --name auto-deploy-test.fbuervenich.de registry.git.rwth-aachen.de/fbuervenich.de/auto-deploy-test
